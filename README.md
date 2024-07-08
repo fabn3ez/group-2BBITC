@@ -35,8 +35,8 @@ int main() {
         cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-        
-  switch (choice) {
+
+        switch (choice) {
             case 1:
                 addStudent(students);
                 break;
@@ -65,6 +65,7 @@ int main() {
 
     return 0;
 }
+
 void addStudent(vector<student>& students) {
     student newStudent;
     cout << "Enter student's first name: ";
@@ -98,6 +99,7 @@ void addStudent(vector<student>& students) {
     students.push_back(newStudent);
     cout << "Student added successfully!" << endl;
 }
+
 void viewStudents(const vector<student>& students) {
     if (students.empty()) {
         cout << "No students to display." << endl;
@@ -124,29 +126,30 @@ void viewSports() {
     cout << "Available Sports:" << endl;
     // List available sports and their capacities
 }
-void viewStudents(const vector<student>& students) {
-    if (students.empty()) {
-        cout << "No students to display." << endl;
+
+void viewGroupedStudents() {
+    cout << "Viewing Grouped Students:" << endl;
+    // Group students by activity and group, and display
+}
+
+void saveToFile(const vector<student>& students) {
+    ofstream outFile("students.csv");
+    if (!outFile) {
+        cerr << "Error opening file." << endl;
         return;
     }
 
-    cout << "Viewing all students:" << endl;
-    cout << setw(15) << "First Name" << setw(15) << "Surname" << setw(8) << "Gender" << setw(5) << "Age" << setw(8) << "Group" << setw(15) << "Sport" << setw(20) << "Clubs/Societies" << endl;
-    for (const auto& student : students) {
-        cout << setw(15) << student.firstname << setw(15) << student.surname << setw(8) << student.gender << setw(5) << student.age << setw(8) << student.group << setw(15) << student.sport;
-        for (const auto& club : student.clubs) {
-            cout << club << " ";
+    // Write student data to CSV file
+    outFile << "First Name,Surname,Gender,Age,BBiT Group,Sport,Clubs/Societies" << endl;
+    for (const auto &student: students) {
+        outFile << student.firstname << "," << student.surname << "," << student.gender << "," << student.age << ","
+                << student.group << "," << student.sport << ",";
+        for (const auto &club: student.clubs) {
+            outFile << club << " ";
         }
-        cout << endl;
+        outFile << endl;
     }
-}
 
-void viewClubs() {
-    cout << "Available Clubs/Societies:" << endl;
-    // List available clubs and their capacities
-}
-
-void viewSports() {
-    cout << "Available Sports:" << endl;
-    // List available sports and their capacities
+    outFile.close();
+    cout << "Data saved to students.csv" << endl;
 }
