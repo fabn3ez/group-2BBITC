@@ -35,4 +35,34 @@ int main() {
         cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
+        
+  switch (choice) {
+            case 1:
+                addStudent(students);
+                break;
+            case 2:
+                viewStudents(students);
+                break;
+            case 3:
+                viewClubs();
+                break;
+            case 4:
+                viewSports();
+                break;
+            case 5:
+                viewGroupedStudents();
+                break;
+            case 6:
+                saveToFile(students);
+                break;
+            case 7:
+                cout << "Exiting program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 7);
+
+    return 0;
+}
 
