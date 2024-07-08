@@ -65,4 +65,36 @@ int main() {
 
     return 0;
 }
+void addStudent(vector<student>& students) {
+    student newStudent;
+    cout << "Enter student's first name: ";
+    cin >> newStudent.firstname;
+    cout << "Enter student's surname: ";
+    cin >> newStudent.surname;
+    cout << "Enter student's gender (M/F): ";
+    cin >> newStudent.gender;
+    cout << "Enter student's age: ";
+    cin >> newStudent.age;
+    cout << "Enter student's BBiT group: ";
+    cin >> newStudent.group;
 
+    // Activity selection
+    cout << "Select student's sport (or type 'None'): ";
+    cin.ignore(); // Ignore newline character
+    getline(cin, newStudent.sport);
+    if (newStudent.sport != "None") {
+    }
+    if (newStudent.sport == "None") {
+        string club;
+        cout << "Select student's club/society (or type 'None' to skip): ";
+        getline(cin, club);
+        while (club != "None") {
+            newStudent.clubs.push_back(club);
+            cout << "Select another club/society (or type 'None' to finish): ";
+            getline(cin, club);
+        }
+    }
+
+    students.push_back(newStudent);
+    cout << "Student added successfully!" << endl;
+}
