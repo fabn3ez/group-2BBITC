@@ -24,7 +24,8 @@ void saveToFile(const vector<student>& students);
 int main() {
     vector<student> students;
     int choice;
-
+    
+// The menu displayed to the user
     do {
         cout << "1. Add Student" << endl;
         cout << "2. View Students" << endl;
@@ -35,7 +36,8 @@ int main() {
         cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-
+        
+// The switch statement allowing the program to execute different blocks of code based on the choice
         switch (choice) {
             case 1:
                 addStudent(students);
