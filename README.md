@@ -68,6 +68,7 @@ int main() {
     return 0;
 }
 
+
 void addStudent(vector<student>& students) {
     student newStudent;
     cout << "Enter student's first name: ";
