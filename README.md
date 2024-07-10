@@ -1,20 +1,9 @@
-// input & output services
-#include <iostream>
-
-// vector for storing students
-#include <vector>
-
-// fstream for file operations
-#include <fstream>
-
-// string for characters, sports & clubs chosen
-#include <string>
-
-// iomanip for manipulation of input/output
-#include <iomanip>
-
+#include <iostream>// input & output services
+#include <vector>// vector for storing students
+#include <fstream>// fstream for file operations
+#include <string>// string for characters, sports & clubs chosen
+#include <iomanip>// iomanip for manipulation of input/output
 using namespace std;
-
 // struct for grouping together variables of different types under a single name
 struct student {
     string firstname;
@@ -23,10 +12,9 @@ struct student {
     int age{};
     int group{};
     string sport;
-// vector b4 storing multiple club names dynamically
+// vector before storing multiple club names dynamically
     vector<string> clubs;
 };
-
 // Function prototypes
 // Declaration of functions for adding, viewing students, viewing clubs and sports, viewing grouped students, and saving data to a file.
 void addStudent(vector<student>& students);
@@ -35,7 +23,6 @@ void viewClubs();
 void viewSports();
 void viewGroupedStudents();
 void saveToFile(const vector<student>& students);
-
 int main() {
     vector<student> students;
     int choice;
@@ -51,7 +38,6 @@ int main() {
         cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-        
 // The switch statement allowing the program to execute different blocks of code based on the choice
         switch (choice) {
             case 1:
