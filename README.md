@@ -10,8 +10,8 @@
 // string for characters, sports & clubs chosen
 #include <string>
 
-#include <iomanip>
 // iomanip for manipulation of input/output
+#include <iomanip>
 
 using namespace std;
 
