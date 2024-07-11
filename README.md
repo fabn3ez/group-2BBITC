@@ -80,18 +80,18 @@ void addStudent(vector<student>& students) {
     cin >> newStudent.gender;
     cout << "Enter student's age: ";
     cin >> newStudent.age;
-    cout << "Enter student's BBiT group: ";
+    cout << "Enter student's BBiT group (Choose 1, 2 or 3: ";
     cin >> newStudent.group;
 
     // Activity selection
-    cout << "Select student's sport (or type 'None'): ";
+    cout << "Select student's sport (Sports available are Rugby, Athletics, Swimming, Soccer. If no sport. type 'None'): ";
     cin.ignore(); // Ignore newline character
     getline(cin, newStudent.sport);
     if (newStudent.sport != "None") {
     }
     if (newStudent.sport == "None") {
         string club;
-        cout << "Select student's club/society (or type 'None' to skip): ";
+        cout << "Select student's club/society (Clubs/Societies available are Journalism club, Red Cross Society, AISEC, Business club, Computer Science Club. If none type 'None' to skip): ";
         getline(cin, club);
         while (club != "None") {
             newStudent.clubs.push_back(club);
