@@ -76,7 +76,7 @@ void addStudent(vector<student>& students) {
     cin >> newStudent.firstname;
     cout << "Enter student's surname: ";
     cin >> newStudent.surname;
-    cout << "Enter student's gender (M/F): ";
+    cout << "Enter student's gender (M / F): ";
     cin >> newStudent.gender;
     cout << "Enter student's age: ";
     cin >> newStudent.age;
